@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login para Acesso</title>
+</head>
+<body>
+  <h2>Insira o Usuário e a Senha</h2>
+  <form id="loginForm">
+    <input type="text" id="usuario" placeholder="Usuário" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      // Usuário e senha inseridos
+      var usuario = document.getElementById("usuario").value;
+      var senha = document.getElementById("senha").value;
+
+      // Definir as credenciais corretas
+      var usuarioCorreto = "usuario"; // Altere para o nome de usuário desejado
+      var senhaCorreta = "9080";
+
+      // Verificar se o usuário e senha estão corretos
+      if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        // Redireciona para a URL da playlist M3U
+        window.location.href = "https://tvcompleta.github.io/BrazilTV/playlist.m3u";
+      } else {
+        alert("Usuário ou senha incorretos.");
+      }
+    });
+  </script>
+</body>
+</html>
